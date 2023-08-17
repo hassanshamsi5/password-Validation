@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Password Validation</title>
 </head>
+
 <body>
 
     <h2>Password Validation</h2>
     <input type="password" id="passwordInput" onkeyup="validatePassword()">
     <p id="passwordMessage"></p>
-    
+    <button id="btn">submit</button>
+
     <script>
         function validatePassword() {
             const password = document.getElementById("passwordInput").value;
@@ -21,7 +24,7 @@
             const numbers = password.match(numberRegex);
             const smallLetters = password.match(smallLetterRegex);
             const symbols = password.match(symbolRegex);
-            
+
             const isValid =
                 capitalLetters && capitalLetters.length >= 3 &&
                 numbers && numbers.length >= 3 &&
@@ -31,7 +34,18 @@
                 ? alert("Password is correct.")
                 : "Password must have at least 3 capital letters, 3 numbers, 2 small letters, and 1 symbol."
             document.getElementById("passwordMessage").textContent = message
+            console.log(message);
+            document.getElementById('btn').addEventListener('click', () => {
+                if (isValid === true) {
+                    window.location = 'https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwixxtGg-eOAAxXvcWwGHZ1xAgEQPAgI'
+                }else{
+                    console.log("error");
+                }
+
+            })
+
         }
+
     </script>
 </body>
 
