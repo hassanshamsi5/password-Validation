@@ -18,10 +18,12 @@
             const numberRegex = /\d/g;
             const smallLetterRegex = /[a-z]/g;
             const symbolRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/g;
+
             const capitalLetters = password.match(capitalLetterRegex);
             const numbers = password.match(numberRegex);
             const smallLetters = password.match(smallLetterRegex);
             const symbols = password.match(symbolRegex);
+            
             const isValid =
                 capitalLetters && capitalLetters.length >= 3 &&
                 numbers && numbers.length >= 3 &&
